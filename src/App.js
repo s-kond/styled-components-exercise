@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import styled from 'styled-components';
 import './App.css';
+import React from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <Heading1>Styled Components exercise</Heading1>
+      <Circle></Circle>
+      <Block></Block>
+    </AppContainer>
   );
 }
+
+const AppContainer = styled.main`
+  text-align: center;
+`;
+
+const Heading1 = styled.h1 `
+  color: blue;
+`;
+
+const Circle = styled.div `
+  background-color: orange;
+  height: 50px;
+  width: 50px; 
+  border-radius: 50%;
+  margin: 0 auto;
+`
+
+const Block = styled.div `
+  background-color: blue;
+  height: 50px;
+  width: 50px;
+  margin: 10px auto;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: turquoise;
+  }
+`
+
 
 export default App;
